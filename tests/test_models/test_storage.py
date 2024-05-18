@@ -110,9 +110,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(my_state_id, all_objects.keys())
         self.assertEqual(all_objects[my_state_id].name, "Kedah")
 
-    def test_save_on_city(self):
-        """Test save on review class"""
-        pass
 
     def test_save_on_review(self):
         """Test save method on city class"""
