@@ -1,6 +1,17 @@
-# Learning Objectives
+# AirBnB Clone Project
 
-## General
+![CHEESE!] (hbnb.png)
+
+## Description of the project
+The ALX-AIRBNB_CLONE PROJECT sums up the implementation of the first part of the project  - The final result of this project will have the following:
+* A command interpreter to manipulate data without a visual interface, like a shell
+* A comprehensive database to manage data (json file)
+
+
+
+## Learning Objectives
+
+### General
 * How to create a Python package
 * How to create a command interpreter in Python using the cmd module
 * What is Unit testing and how to implement it in a large project
