@@ -18,6 +18,7 @@ import copy
 
 
 class FileStorage:
+    """File storage Class"""
     __file_path = "file.json"
     __objects = {}
 
