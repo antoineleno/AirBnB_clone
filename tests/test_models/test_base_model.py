@@ -154,4 +154,3 @@ class TestBaseModel(unittest.TestCase):
         with self.assertRaises(ValueError):
             my_model = BaseModel(created_at="12pm", updated_at="12pm")
             self.assertEqual(my_model.created_at, "12pm")
-
