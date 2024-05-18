@@ -1,6 +1,6 @@
 # AirBnB Clone Project
 
-![CHEESE!] (hbnb.png)
+![Databrick project with Snowlake](hbnb.png)
 
 ## Description of the project
 The ALX-AIRBNB_CLONE PROJECT sums up the implementation of the first part of the project  - The final result of this project will have the following:
