@@ -281,4 +281,9 @@ class BNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    BNBCommand().cmdloop()
+    import sys
+    if sys.stdin.isatty():
+        BNBCommand().cmdloop()
+    else:
+        for command in sys.stdin:
+            BNBCommand().onecmd(command)
