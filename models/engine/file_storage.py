@@ -49,12 +49,6 @@ class FileStorage:
         all_objects = copy.deepcopy(FileStorage.__objects)
         for obj_id in all_objects.keys():
             all_objects[obj_id] = all_objects[obj_id].to_dict()
-        for key, value in all_objects.items():
-            for key1, value1 in value.items():
-                if type(value1) is datetime:
-                    new_value = copy.deepcopy(value1)
-                    f_value = new_value.isoformat()
-                    all_objects[key][key1] = f_value
         with open(FileStorage.__file_path, "w") as file:
             json.dump(all_objects, file)
 
