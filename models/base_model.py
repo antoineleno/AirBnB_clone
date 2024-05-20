@@ -64,13 +64,18 @@ class BaseModel:
         """
         returns a dictionary containing all keys/values of dict of the instance
         """
-        a = self.created_at
-        b = self.updated_at
-        if isinstance(a, datetime) and isinstance(b, datetime):
-            self.created_at = self.created_at.isoformat()
-            self.updated_at = self.updated_at.isoformat()
-        diction = self.__dict__
-        object_class = type(self)
-        diction2 = {'__class__': f'{object_class.__name__}'}
-        diction.update(diction2)
+        diction = {key: value for key, value in self.__dict__.items()}
+
+        if 'created_at' in diction and \
+                isinstance(diction['created_at'], datetime):
+
+            diction['created_at'] = diction['created_at'].isoformat()
+
+        if 'updated_at' in diction and \
+                isinstance(diction['updated_at'], datetime):
+
+            diction['updated_at'] = diction['updated_at'].isoformat()
+
+        diction['__class__'] = self.__class__.__name__
+
         return diction
