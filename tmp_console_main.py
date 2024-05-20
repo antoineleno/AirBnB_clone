@@ -213,7 +213,7 @@ class BNBCommand(cmd.Cmd):
         try:
             class_name, command = line.split(".")
         except Exception:
-            print("** no instance found **")
+            print("**Not implemented**")
             return
 
         if hasattr(globals().get(class_name), '__bases__') \
@@ -281,7 +281,7 @@ class BNBCommand(cmd.Cmd):
                         pass
 
             else:
-                print("** no instance found **")
+                print("** Not implemented yet **")
         else:
             print("** Class name does not exist **")
 
