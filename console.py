@@ -221,8 +221,8 @@ class BNBCommand(cmd.Cmd):
     def default(self, line):
         try:
             class_name, command = line.split(".")
-        except Exception:
-            print("** no instance found **")
+        except ValueError:
+            print("** Unknown Syntax: {:s}".format(line))
             return
 
         if hasattr(globals().get(class_name), '__bases__') \
@@ -292,7 +292,7 @@ class BNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
         else:
-            print("** Class name does not exist **")
+            print("** Unknown Syntax: {:s}".format(line))
 
 
 if __name__ == '__main__':
