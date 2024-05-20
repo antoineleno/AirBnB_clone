@@ -53,6 +53,7 @@ class BNBCommand(cmd.Cmd):
         """show instance base on id and class name"""
         all_objects = storage.all()
         arguments = args.split()
+        className = arguments[0]
         if len(arguments) == 0:
             print("** class name missing **")
             return
@@ -75,18 +76,24 @@ class BNBCommand(cmd.Cmd):
                 print(all_objects[obj_key])
                 return
 
-        if arguments[0] not in my_id_dict.keys():
+        if not (hasattr(globals().get(className), '__bases__') 
+               and issubclass(globals().get(className), BaseModel)):
             print("** class doesn't exist **")
             return
+        try:
 
-        if arguments[1] not in my_id_dict[arguments[0]]:
+            if arguments[1] not in my_id_dict[arguments[0]]:
+                print("** no instance found **")
+                return
+        except Exception:
             print("** no instance found **")
-            return
+            pass
 
     def do_destroy(self, args):
         """Deletes an instance based on the class name and id"""
         all_objects = storage.all()
         arguments = args.split()
+        className = arguments[0]
         if len(arguments) == 0:
             print("** class name missing **")
             return
@@ -113,14 +120,17 @@ class BNBCommand(cmd.Cmd):
         except RuntimeError:
             return
 
-        if arguments[0] not in my_id_dict.keys():
+        if not (hasattr(globals().get(className), '__bases__') 
+               and issubclass(globals().get(className), BaseModel)):
             print("** class doesn't exist **")
+            return
         try:
 
             if arguments[1] not in my_id_dict[arguments[0]]:
                 print("** no instance found **")
                 return
         except Exception:
+            print("** no instance found **")
             pass
 
     def do_update(self, args):
