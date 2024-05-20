@@ -120,7 +120,7 @@ class BNBCommand(cmd.Cmd):
             if arguments[1] not in my_id_dict[arguments[0]]:
                 print("** no instance found **")
                 return
-        except:
+        except Exception:
             pass
 
     def do_update(self, args):
@@ -170,10 +170,13 @@ class BNBCommand(cmd.Cmd):
 
         if arguments[0] not in my_id_dict.keys():
             print("** class doesn't exist **")
+        try:
 
-        if arguments[1] not in my_id_dict[arguments[0]]:
-            print("** no instance found **")
-            return
+            if arguments[1] not in my_id_dict[arguments[0]]:
+                print("** no instance found **")
+                return
+        except Exception:
+            pass
 
     def do_all(self, args):
         """Prints all string representation of all i
