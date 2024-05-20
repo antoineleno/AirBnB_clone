@@ -45,7 +45,7 @@ class BNBCommand(cmd.Cmd):
                 my_model.save()
                 print(my_model.id)
             else:
-                print("** class doesn't exist")
+                print("** class doesn't exist **")
         else:
             print("** class name missing **")
 
@@ -58,7 +58,7 @@ class BNBCommand(cmd.Cmd):
             return
 
         if len(arguments) < 2:
-            print("** instance id missing ** ")
+            print("** instance id missing **")
             return
 
         my_id_dict = {}
@@ -92,7 +92,7 @@ class BNBCommand(cmd.Cmd):
             return
 
         if len(arguments) < 2:
-            print("** instance id missing ** ")
+            print("** instance id missing **")
             return
 
         my_id_dict = {}
@@ -129,11 +129,11 @@ class BNBCommand(cmd.Cmd):
             return
 
         if len(arguments) < 2:
-            print("** instance id missing ** ")
+            print("** instance id missing **")
             return
 
         if len(arguments) < 3:
-            print("** attribute name missing ** ")
+            print("** attribute name missing **")
             return
 
         if len(arguments) < 4:
